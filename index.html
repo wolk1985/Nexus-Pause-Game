@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Nexus Game</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-900 min-h-screen flex flex-col justify-center items-center">
+  <div class="game-wrapper w-full max-w-[420px] px-2 sm:px-5 mx-auto flex flex-col items-center">
+    <!-- Логотип-текст над кубом (зверху сторінки) -->
+    <div id="nexus-logo-text" class="flex flex-col items-center mt-8 mb-20 w-full select-none">
+      <span id="nexus-title" class="points-value neon-text text-5xl tracking-widest mb-1 transition-all">N E X U S</span>
+      <span id="nexus-subtitle" class="neon-text text-base font-normal transition-all" style="cursor:pointer; text-decoration:underline;">Pause Game</span>
+    </div>
+    <!-- Гра: Куб -->
+    <div class="game-container mt-20">
+      <div id="cube" class="cube">
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face right"></div>
+        <div class="face left"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+        <div class="center-letter">N</div>
+      </div>
+    </div>
+
+    <!-- Нижня панель з перемикачем, Precision та поінтами -->
+    <div class="bottom-panel flex flex-row items-center justify-center gap-[10px]" style="margin-top: 10vh;">
+      <!-- Rewards (лівий блок) -->
+      <div class="panel-block neon-block" id="rewards-block">
+        <div id="rewards-value" class="neon-text points-value mb-1">0</div>
+        <span class="neon-text text-base font-normal">Rewards</span>
+      </div>
+      <!-- Основний блок з перемикачем -->
+      <div id="main-panel" class="main-panel-block neon-block px-3 py-2">
+        <!-- Precision -->
+        <div class="flex flex-col justify-center items-center" style="width:70px; ">
+          <div id="precision-value" class="neon-text points-value mb-1" style="font-size:1.75rem;">100%</div>
+          <span class="neon-text text-base font-normal">Precis.</span>
+        </div>
+        <!-- Кнопка-перемикач (відцентрована, неактивна) -->
+        <div class="flex justify-center items-center" style="width:70px;">
+          <div id="connect-toggle-button" class="relative neon-btn connect-off pointer-events-none select-none mx-auto" style="width:57px;height:57px;">
+            <div id="toggle-circle" style="width:48px;height:48px;">
+              <span id="toggle-n" class="points-value" style="font-size:1.55rem;">N</span>
+            </div>
+          </div>
+        </div>
+        <!-- Points -->
+        <div class="flex flex-col justify-center items-center" style="width:70px;">
+          <div id="points" class="neon-text points-value mb-1" style="font-size:1.75rem;">0</div>
+          <span class="neon-text text-base font-normal">Points</span>
+        </div>
+      </div>
+      <!-- Wallet (правий блок) -->
+      <div class="panel-block neon-block" id="wallet-block">
+        <div id="wallet-points" class="neon-text points-value mb-1">0</div>
+        <span class="neon-text text-base font-normal">Wallet</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
