@@ -154,3 +154,5 @@ MIT License (see LICENSE file if present)
 
 Enjoy the game!
 https://wolk1985.github.io/Nexus-Pause-Game/
+![image](https://github.com/user-attachments/assets/bd63d126-3b45-418a-ac43-fdbca3048e5a)
+
