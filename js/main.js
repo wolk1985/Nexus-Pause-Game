@@ -23,15 +23,20 @@ walletPoints.innerText = wallet;
 rewardsValue.innerText = rewards;
 pointsDisplay.innerText = points;
 
+let frameSkip = 0;
 function animate(time) {
   if (!lastTime) lastTime = time;
   const delta = time - lastTime;
   lastTime = time;
-  const increment = 1.08 * (delta / 16.67);
+  const increment = 1.25 * (delta / 16.67);
   angleX = (angleX + increment) % 360;
   angleY = (angleY + increment) % 360;
-  updateCube();
-  updatePrecision();
+
+  frameSkip = (frameSkip + 1) % 2; // updateCube через кадр
+  if (frameSkip === 0) {
+    updateCube();
+    updatePrecision();
+  }
   requestAnimationFrame(animate);
 }
 
